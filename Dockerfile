@@ -6,7 +6,7 @@
 
 #Base image 可以是镜像名字或者镜像ID
 
-FROM cento:7
+FROM centos:7
 
  
 
