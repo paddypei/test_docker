@@ -6,7 +6,7 @@
 
 #Base image 可以是镜像名字或者镜像ID
 
-FROM centos
+FROM cento:7
 
  
 
@@ -18,8 +18,10 @@ MAINTAINER paddypei 535768220@qq.com
 
 #put nginx-1.12.2.tar.gz into /usr/local/src and unpack nginx
 
-ADD nginx-1.12.2.tar.gz /usr/local/src
+#ADD nginx-1.12.2.tar.gz /usr/local/src
 
+ADD http://nginx.org/download/nginx-1.12.2.tar.gz
+RUN tar zxvf nginx-1.12.2.tar.gz /usr/local/src
  
 
 # running required command 在容器里运行nginx需要依赖包的命令
