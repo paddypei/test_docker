@@ -20,7 +20,7 @@ MAINTAINER paddypei 535768220@qq.com
 
 #ADD nginx-1.12.2.tar.gz /usr/local/src
 
-ADD http://nginx.org/download/nginx-1.12.2.tar.gz
+ADD http://nginx.org/download/nginx-1.12.2.tar.gz .
 RUN tar zxvf nginx-1.12.2.tar.gz /usr/local/src
  
 
