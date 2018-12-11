@@ -53,9 +53,6 @@ RUN yum -y install mysql-community-server
 
 RUN systemctl enable mysqld
 
-RUN systemctl start mysql
-
-RUN systemctl status mysql
 
 
 #env 将nginx启动命令加到环境变量里
@@ -67,4 +64,4 @@ ENV PATH /usr/local/nginx/sbin:$PATH
 #expose 映射80端口
 
 EXPOSE 80
-CMD ["/usr/sbin/init"]
+#CMD ["/usr/sbin/init"]
