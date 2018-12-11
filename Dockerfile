@@ -44,7 +44,19 @@ WORKDIR /usr/local/src/nginx-1.12.2
 
 RUN ./configure --user=nginx --group=nginx --prefix=/usr/local/nginx --with-file-aio --with-http_ssl_module --with-http_realip_module --with-http_addition_module --with-http_xslt_module --with-http_image_filter_module --with-http_geoip_module --with-http_sub_module --with-http_dav_module --with-http_flv_module --with-http_mp4_module --with-http_gunzip_module --with-http_gzip_static_module --with-http_auth_request_module --with-http_random_index_module --with-http_secure_link_module --with-http_degradation_module --with-http_stub_status_module && make && make install
 
- 
+# 安装mysql
+RUN rpm -Uvh http://dev.mysql.com/get/mysql-community-release-el7-5.noarch.rpm
+
+RUN yum repolist enabled | grep "mysql.*-community.*"
+
+RUN yum -y install mysql-community-server
+
+RUN systemctl enable mysqld
+
+RUN systemctl start mysql
+
+RUN systemctl status mysql
+
 
 #env 将nginx启动命令加到环境变量里
 
