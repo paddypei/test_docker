@@ -67,3 +67,4 @@ ENV PATH /usr/local/nginx/sbin:$PATH
 #expose 映射80端口
 
 EXPOSE 80
+CMD ["/usr/sbin/init"]
