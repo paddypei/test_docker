@@ -53,7 +53,9 @@ RUN ln -s /usr/local/python3/bin/python3 /usr/bin/python3
 RUN rm -rf /Python-3.6.5*
 RUN yum install -y epel-release
 RUN yum install -y python-pip
-RUN ln -s /usr/local/python3/bin/pip3 /usr/bin/pip3 && python --version && python3 --version
+RUN ln -s /usr/local/python3/bin/pip3 /usr/bin/pip3
+RUN python --version
+RUN python3 --version
 
 # 安装mysql
 RUN rpm -Uvh http://dev.mysql.com/get/mysql-community-release-el7-5.noarch.rpm
