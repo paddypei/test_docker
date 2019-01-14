@@ -14,8 +14,6 @@ FROM centos:7
 
 MAINTAINER paddypei 535768220@qq.com
 
-#wget 安装
-RUN yum install wget 
 
 #put nginx-1.12.2.tar.gz into /usr/local/src and unpack nginx
 
@@ -46,7 +44,7 @@ WORKDIR /usr/local/src/nginx-1.12.2
 RUN ./configure --user=nginx --group=nginx --prefix=/usr/local/nginx --with-file-aio --with-http_ssl_module --with-http_realip_module --with-http_addition_module --with-http_xslt_module --with-http_image_filter_module --with-http_geoip_module --with-http_sub_module --with-http_dav_module --with-http_flv_module --with-http_mp4_module --with-http_gunzip_module --with-http_gzip_static_module --with-http_auth_request_module --with-http_random_index_module --with-http_secure_link_module --with-http_degradation_module --with-http_stub_status_module && make && make install
 
 #安装python3
-RUN wget https://www.python.org/ftp/python/3.6.5/Python-3.6.5.tar.xz
+ADD https://www.python.org/ftp/python/3.6.5/Python-3.6.5.tar.xz .
 RUN tar -xvJf  Python-3.6.5.tar.xz
 RUN cd Python-3.6.5
 RUN ./configure prefix=/usr/local/python3 && make && make install
