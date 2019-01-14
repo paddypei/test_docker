@@ -44,20 +44,21 @@ WORKDIR /usr/local/src/nginx-1.12.2
 RUN ./configure --user=nginx --group=nginx --prefix=/usr/local/nginx --with-file-aio --with-http_ssl_module --with-http_realip_module --with-http_addition_module --with-http_xslt_module --with-http_image_filter_module --with-http_geoip_module --with-http_sub_module --with-http_dav_module --with-http_flv_module --with-http_mp4_module --with-http_gunzip_module --with-http_gzip_static_module --with-http_auth_request_module --with-http_random_index_module --with-http_secure_link_module --with-http_degradation_module --with-http_stub_status_module && make && make install
 
 #安装python3
-ADD https://www.python.org/ftp/python/3.6.5/Python-3.6.5.tar.xz .
-RUN tar -xvJf  Python-3.6.5.tar.xz
-RUN cd Python-3.6.5
-RUN ./configure --prefix=/usr/local/python3
-RUN make && make install
-RUN ln -s /usr/local/python3/bin/python3 /usr/bin/python3
-RUN rm -rf /Python-3.6.5*
-RUN yum install -y epel-release
-RUN yum install -y python-pip
-
-RUN set -ex
-RUN ln -s /usr/local/python3/bin/pip3 /usr/bin/pip3
+###
+#ADD https://www.python.org/ftp/python/3.6.5/Python-3.6.5.tar.xz .
+#RUN tar -xvJf  Python-3.6.5.tar.xz
+#RUN cd Python-3.6.5
+#RUN ./configure --prefix=/usr/local/python3
+#RUN make && make install
+#RUN ln -s /usr/local/python3/bin/python3 /usr/bin/python3
+#RUN rm -rf /Python-3.6.5*
+#RUN yum install -y epel-release
+#RUN yum install -y python-pip
+###
+#RUN set -ex
+#RUN ln -s /usr/local/python3/bin/pip3 /usr/bin/pip3
 RUN python --version
-RUN python3 --version
+#RUN python3 --version
 
 # 安装mysql
 RUN rpm -Uvh http://dev.mysql.com/get/mysql-community-release-el7-5.noarch.rpm
