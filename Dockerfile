@@ -14,7 +14,8 @@ FROM centos:7
 
 MAINTAINER paddypei 535768220@qq.com
 
- 
+#wget 安装
+RUN yum install wget 
 
 #put nginx-1.12.2.tar.gz into /usr/local/src and unpack nginx
 
