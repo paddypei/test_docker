@@ -52,7 +52,7 @@ RUN tar -xvf Python-3.6.5.tar.xz -C /soft
 WORKDIR /soft/Python-3.6.5
 RUN ./configure --prefix=/usr/local/python3 make && make install
 RUN ln -s /usr/local/python3/bin/python3.6 /usr/bin/python3
-RUN rm -rf /Python-3.6.5*
+RUN rm -rf /soft/Python-3.6.5*
 #RUN yum install -y epel-release
 #RUN yum install -y python-pip
 ###
