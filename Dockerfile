@@ -48,8 +48,8 @@ RUN ./configure --user=nginx --group=nginx --prefix=/usr/local/nginx --with-file
 #安装python3
 ###
 ADD https://www.python.org/ftp/python/3.6.5/Python-3.6.5.tar.xz .
-RUN tar -xvf Python-3.6.5.tar.xz
-WORKDIR /Python-3.6.5  
+RUN tar -xvf Python-3.6.5.tar.xz -C /soft
+WORKDIR /soft/Python-3.6.5
 RUN ./configure --prefix=/usr/local/python3 make && make install
 RUN ln -s /usr/local/python3/bin/python3.6 /usr/bin/python3
 RUN rm -rf /Python-3.6.5*
