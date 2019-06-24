@@ -35,6 +35,30 @@ RUN yum install -y libxslt-devel -y gd gd-devel GeoIP GeoIP-devel pcre pcre-deve
 
 RUN useradd -M -s /sbin/nologin nginx
 
+# -----------------------------------------------------------------------------
+# Devel libraries for delelopment tools like php & nginx ...
+# -----------------------------------------------------------------------------
+RUN yum -y install \
+	lrzsz psmisc epel-release lemon \
+    tar gzip bzip2 bzip2-devel unzip file perl-devel perl-ExtUtils-Embed perl-CPAN \
+    pcre pcre-devel openssh-server openssh sudo \
+    screen vim git telnet expat expat-devel\
+    ca-certificates m4\
+    gd gd-devel libjpeg libjpeg-devel libpng libpng-devel libevent libevent-devel \
+    net-snmp net-snmp-devel net-snmp-libs \
+    freetype freetype-devel libtool-tldl libtool-ltdl-devel libxml2 libxml2-devel unixODBC unixODBC-devel libyaml libyaml-devel\
+    libxslt libxslt-devel libmcrypt libmcrypt-devel freetds freetds-devel \
+    curl-devel gettext-devel \
+    openldap openldap-devel libc-client-devel \
+    jemalloc jemalloc-devel inotify-tools nodejs apr-util yum-utils tree js\
+    && ln -s /usr/lib64/libc-client.so /usr/lib/libc-client.so \
+    && rm -rf /var/cache/{yum,ldconfig}/* \
+    && rm -rf /etc/ld.so.cache \
+    && yum clean all
+    
+RUN rpm --import /etc/pki/rpm-gpg/RPM*
+
+RUN yum -y install htop
 
 # -----------------------------------------------------------------------------
 # Install nginx
