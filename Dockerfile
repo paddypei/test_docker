@@ -44,7 +44,7 @@ ENV NGINX_INSTALL_DIR ${CUSTOM_BIN_PATH}/nginx
 RUN cd ${SRC_DIR} \ 
 	&&  wget -q -O nginx-1.12.2.tar.gz http://nginx.org/download/nginx-1.12.2.tar.gz \
 	&& tar zxvf nginx-1.12.2.tar.gz \
-	&& cd nginx-1.12.2.tar.gz \
+	&& cd nginx-1.12.2 \
 	&& ./configure --user=nginx --group=nginx --prefix=${NGINX_INSTALL_DIR} --with-file-aio --with-http_ssl_module --with-http_realip_module --with-http_addition_module --with-http_xslt_module --with-http_image_filter_module --with-http_geoip_module --with-http_sub_module --with-http_dav_module --with-http_flv_module --with-http_mp4_module --with-http_gunzip_module --with-http_gzip_static_module --with-http_auth_request_module --with-http_random_index_module --with-http_secure_link_module --with-http_degradation_module --with-http_stub_status_module \
 	&& make \
 	&& make install \
