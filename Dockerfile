@@ -14,7 +14,7 @@ FROM centos:7
 
 MAINTAINER paddypei 535768220@qq.com
 
-
+RUN mkdir /soft
 #put nginx-1.12.2.tar.gz into /usr/local/src and unpack nginx
 
 #ADD nginx-1.12.2.tar.gz /usr/local/src
