@@ -47,20 +47,20 @@ RUN ./configure --user=nginx --group=nginx --prefix=/usr/local/nginx --with-file
 
 #安装python3
 ###
-ADD https://www.python.org/ftp/python/3.6.5/Python-3.6.5.tar.xz .
-RUN tar -xvf  Python-3.6.5.tar.xz
-RUN cd Python-3.6.5
-RUN ./configure --prefix=/usr/local/python3
-RUN make && make install
-RUN ln -s /usr/local/python3/bin/python3.6 /usr/bin/python3
-RUN rm -rf /Python-3.6.5*
+#ADD https://www.python.org/ftp/python/3.6.5/Python-3.6.5.tar.xz .
+#RUN tar -xvJf  Python-3.6.5.tar.xz
+#RUN cd Python-3.6.5
+#RUN ./configure --prefix=/usr/local/python3
+#RUN make && make install
+#RUN ln -s /usr/local/python3/bin/python3 /usr/bin/python3
+#RUN rm -rf /Python-3.6.5*
 #RUN yum install -y epel-release
 #RUN yum install -y python-pip
 ###
 #RUN set -ex
-RUN ln -s /usr/local/python3/bin/pip3 /usr/bin/pip3
+#RUN ln -s /usr/local/python3/bin/pip3 /usr/bin/pip3
 RUN python --version
-RUN python3 --version
+#RUN python3 --version
 
 # 安装mysql
 RUN rpm -Uvh http://dev.mysql.com/get/mysql-community-release-el7-5.noarch.rpm
