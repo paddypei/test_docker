@@ -110,6 +110,14 @@ RUN ln -s /usr/local/python3/bin/pip3 /usr/bin/pip3
 RUN python --version
 RUN python3 --version
 
+RUN yum install -y python-setuptools \
+    && easy_install pip \ 
+    && pip install django==1.8.5 -i http://pypi.douban.com/simple/ --trusted-host pypi.douban.com \
+    && pip install psycopg2 -i http://pypi.douban.com/simple/ --trusted-host pypi.douban.com
+
+
+
+
 # 安装mysql
 RUN rpm -Uvh http://dev.mysql.com/get/mysql-community-release-el7-5.noarch.rpm
 
